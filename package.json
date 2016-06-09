@@ -4,7 +4,7 @@
   "description": "Establish a typographic system with modular scale & vertical rhythm.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node -e test/test.js"
   },
   "keywords": [
     "postcss-plugin",
