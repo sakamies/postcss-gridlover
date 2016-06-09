@@ -68,8 +68,8 @@ npm install postcss-gridlover
 
 ```
 var fs = require('fs');
-var postcss = require('../node_modules/postcss');
-var gridlover = require('../');
+var postcss = require('postcss');
+var gridlover = require('postcss-gridlover');
 
 var css = fs.readFileSync('input.css', 'utf8');
 
