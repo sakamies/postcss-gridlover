@@ -4,6 +4,7 @@
   "description": "Enables using Gridlover sx and gr units in your CSS",
   "keywords": [
     "postcss-plugin",
+    "css",
     "gridlover",
     "typography",
     "modular scale",
