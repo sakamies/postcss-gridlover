@@ -26,7 +26,7 @@ h1, .h1 {
 ```
 
 Will produce
-```
+```css
 html, .root {
   --base-font-size: 14px;
   --base-line-height: 1.3;
@@ -44,22 +44,22 @@ h1, .h1 {
 }
 ```
 
-Take a look at ```test-src/gridlover.css``` for the css file the Gridlover app uses.
+Take a look at ```test/input.css``` for the css file the Gridlover app uses.
 
 - An sx value must be an integer to work.
 - Values in gr units don't need to be integers, but if you want to maintain a vertical rhythm, you should keep them integers or make sure adding them up (like 1.5 + 0.5) becomes an integer.
 
 Declare your base values as css variables before you use any gridlover specific values.
 
-```css
-
-```
-
 The base values are defined only once for the whole file for now. (TODO: they should be block scoped.) So if you define a font size in the beginning of the file and at the end of the file, the one at the end of the file will be in effect.
+
+- `--base-font-size` must be an integer in pixels
+- `--base-line-height` must be a float
+- `--base-scale-factor` must be a float
+- ` --base-units` is either px, em or rem
 
 ## Installation
 
-TODO: publish module
 ```
 npm install postcss-gridlover
 ```

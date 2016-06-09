@@ -1,22 +1,28 @@
 {
   "name": "postcss-gridlover",
   "version": "0.0.1",
-  "description": "Establish a typographic system with modular scale & vertical rhythm.",
-  "main": "index.js",
-  "scripts": {
-    "test": "node -e test/test.js"
-  },
+  "description": "Enables using Gridlover sx and gr units in your CSS",
   "keywords": [
     "postcss-plugin",
     "gridlover",
-    "typography"
+    "typography",
+    "modular scale",
+    "vertical rhythm"
   ],
   "author": "Ville Vanninen <ville@pumpula.net>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sakamies/postcss-gridlover.git"
+  },
   "devDependencies": {
     "postcss": "^5.0.21"
   },
   "dependencies": {
     "postcss": "^5.0.21"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "node -e test/test.js"
   }
 }
