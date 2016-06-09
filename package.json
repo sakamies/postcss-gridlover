@@ -1,0 +1,22 @@
+{
+  "name": "postcss-gridlover",
+  "version": "0.0.1",
+  "description": "Establish a typographic system with modular scale & vertical rhythm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "postcss-plugin",
+    "gridlover",
+    "typography"
+  ],
+  "author": "Ville Vanninen <ville@pumpula.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "postcss": "^5.0.21"
+  },
+  "dependencies": {
+    "postcss": "^5.0.21"
+  }
+}

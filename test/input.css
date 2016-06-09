@@ -1,0 +1,73 @@
+html, .root {
+  --base-font-size: 14px;
+  --base-line-height: 1.3;
+  --base-scale-factor: 1.618;
+  --base-units: em;
+  font-size: var(--base-font-size); /* Required when using em or rem */
+  line-height: var(--base-line-height);
+}
+body, .article {
+  font-family: sans-serif;
+  font-size: 0sx;
+  line-height: auto;
+  max-width: 560px;
+  margin: auto;
+}
+h1, .h1 {
+  font-size: 3sx;
+  line-height: auto;
+  margin-top: 1gr;
+  margin-bottom: 2gr;
+}
+h2, .h2 {
+  font-size: 2sx;
+  line-height: 0gr;
+  margin-top: 1gr;
+  margin-bottom: 1gr;
+}
+h3, .h3 {
+  font-size: 1sx;
+  line-height: 0gr;
+  margin-top: 1gr;
+  margin-bottom: 0gr;
+}
+h4, .h4 {
+  font-size: 0sx;
+  line-height: 0gr;
+  margin-top: 1gr;
+  margin-bottom: 0gr;
+}
+h5, .h5 {
+  font-size: 0sx;
+  line-height: 0gr;
+  margin-top: 1gr;
+  margin-bottom: 0gr;
+}
+p, ul, ol, pre , table, blockquote {
+  margin-top: 0gr;
+  margin-bottom: 1gr;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0gr;
+  margin-bottom: 0gr;
+}
+
+/* Let's make sure all's aligned */
+hr, .hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+a, b, i, strong, em, small, code {
+  line-height: 0;
+}
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
