@@ -144,6 +144,7 @@ module.exports = postcss.plugin('postcss-gridlover', function (options) {
         }
       });
     });
+    //TODO: check for missing base values and thow error before calculating scale
     var scaleStack = scaleCalculator(base, 0, 12);
     var context = 0;
 
