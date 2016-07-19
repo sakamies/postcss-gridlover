@@ -164,11 +164,7 @@ module.exports = postcss.plugin('postcss-gridlover', function (options) {
         }
       });
       rule.walkDecls(function (decl, i) {
-        //should probably use replaceValues here for speed
-        console.log('');
-        //console.log(decl.value);
         decl.value = valueComputer(base, scaleStack, decl.prop, decl.value, context);
-        //console.log(decl.value);
       });
     });
   }
