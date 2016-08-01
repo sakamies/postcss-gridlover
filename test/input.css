@@ -2,8 +2,8 @@ html {
   --base-font-size: 14px; /* Must be in pixels */
   --base-line-height: 1.3; /* Must be a decimal number */
   --base-scale-factor: 1.618; /* Must be a decimal number */
-  --base-units: em; /* px, rem, em */
-  font-size: var(--base-font-size); /* html/root ront-size must be defined as the base font size when using em or rem, or the grid won't be pixel perfect */
+  --base-units: px; /* px, rem, em */
+  font-size: var(--base-font-size); /* html/root font-size must be defined as the base font size when using em or rem, or the grid won't be pixel perfect */
   line-height: var(--base-line-height);
 }
 body {
