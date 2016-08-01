@@ -1,6 +1,6 @@
 # postcss-gridlover
 
-Enables using Gridlover sx and gr units in your CSS
+Enables using [Gridlover](http://gridlover.net) sx and gr units in your CSS
 
 ## Gridlover
 
@@ -9,17 +9,18 @@ Gridlover gives you a [modular scale](http://alistapart.com/article/more-meaning
 Using this ```input.css```:
 ```css
 html, .root {
-  --base-font-size: 14px;
-  --base-line-height: 1.3;
-  --base-scale-factor: 1.618;
-  --base-units: px;
+  --base-font-size: 14px; /* Must be in pixels */
+  --base-line-height: 1.3; /* Must be a decimal number */
+  --base-scale-factor: 1.618; /* Must be a decimal number */
+  --base-units: px; /* px, rem, em */
+  font-size: var(--base-font-size); /* html/root font-size must be defined as the base font size when using em or rem, or the grid won't be pixel perfect */
 }
 body, .article {
-  font-size: 0sx;
+  font-size: 0sx; /* Must be an integer */
   line-height: auto;
 }
 h1, .h1 {
-  font-size: 3sx;
+  font-size: 3sx; /* Must be an integer */
   line-height: 4gr;
   margin: 2gr 0;
 }
@@ -32,6 +33,7 @@ html, .root {
   --base-line-height: 1.3;
   --base-scale-factor: 1.618;
   --base-units: px;
+  font-size: var(--base-font-size);
 }
 body, .article {
   font-size: 14px;
@@ -44,19 +46,10 @@ h1, .h1 {
 }
 ```
 
-Take a look at ```test/input.css``` for the css file the Gridlover app uses.
+Take a look at `test/input.css` for the css file the Gridlover app uses.
 
-- An sx value must be an integer to work.
+- An sx value must be an integer.
 - Values in gr units don't need to be integers, but if you want to maintain a vertical rhythm, you should keep them integers or make sure adding them up (like 1.5 + 0.5) becomes an integer.
-
-Declare your base values as css variables before you use any gridlover specific values.
-
-The base values are defined only once for the whole file for now. (TODO: they should be block scoped.) So if you define a font size in the beginning of the file and at the end of the file, the one at the end of the file will be in effect.
-
-- `--base-font-size` must be an integer in pixels
-- `--base-line-height` must be a float
-- `--base-scale-factor` must be a float
-- ` --base-units` is either px, em or rem
 
 ## Installation
 
