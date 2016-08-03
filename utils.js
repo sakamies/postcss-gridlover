@@ -7,8 +7,8 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   window.cloneObj = (obj) => Object.assign({}, obj);
 }
 
-//Constants
-const G = {};
+//Constants (Defined as a var so Node/Browser versions work together easily)
+var G = {};
 
 //Make interoperable as a node module for postcss-gridlover
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
