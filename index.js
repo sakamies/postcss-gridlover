@@ -13,9 +13,9 @@ module.exports = postcss.plugin('postcss-gridlover', function () {
     var scaleStack;
     css.walkRules(function (rule) {
       var context = 0;
+      var baseChanged = false;
 
       rule.walkDecls(function (decl, i) {
-        var baseChanged = false;
 
         if (decl.prop === '--base-font-size') {
           if (decl.value.indexOf('px') === -1) {
@@ -37,13 +37,13 @@ module.exports = postcss.plugin('postcss-gridlover', function () {
           base.units = decl.value;
           baseChanged = true;
         }
-
-        if (baseChanged) {
-          //TODO: check for missing base values and thow error before calculating scale. Should the error be checked for as early as possible or at the deepest level?
-          //TODO: Find scaleCalculator max value for font-size from the css file
-          scaleStack = scaleCalculator(base, 0, 12);
-        }
       });
+
+      if (baseChanged) {
+        //TODO: check for missing base values and thow error before calculating scale. Should the error be checked for as early as possible or at the deepest level?
+        //TODO: Find scaleCalculator max value for font-size from the css file
+        scaleStack = scaleCalculator(base, 0, 12);
+      }
 
       rule.walkDecls('font-size', function (decl, i) {
         let isScaleUnit = decl.value.match(/\b[0-9]+sx\b/g);
