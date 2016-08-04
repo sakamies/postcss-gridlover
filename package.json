@@ -1,6 +1,6 @@
 {
   "name": "postcss-gridlover",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Enables using Gridlover sx and gr units in your CSS",
   "keywords": [
     "postcss-plugin",
