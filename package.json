@@ -24,6 +24,6 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "node -e test/test.js"
+    "test": "cd test;node test.js"
   }
 }
