@@ -1,7 +1,5 @@
 'use strict'
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  module.exports = scaleCalculator;
-}
+module.exports = scaleCalculator;
 
 /*
   Builds a lookup array for font sizes and matching line height related values for each font size. Not sure if it's better to have the array built once or calculated each time a font size is requested. Could be so that the function keeps an array in memory and populates it as font sizes are requested, so subsequent same font sizes would just look values from the array. Changing base values would of course reset the array, just like it does now.

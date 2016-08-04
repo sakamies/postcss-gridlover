@@ -1,25 +1,22 @@
 'use strict'
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  var G = require('./utils.js');
-  ruleComputer.valueComputer = valueComputer;
-  module.exports = ruleComputer;
-}
+ruleComputer.valueComputer = valueComputer;
+module.exports = ruleComputer;
 
 /*
   Takes in an arbitrarily nested hierarchy of objects from any json that already kinda looks like css (has only objects & strings)
 
-  Computes (e.g. looks up from the scale stack) all values that Gridlover understands to proper css values that browsers understand.
-
-  TODO: make this into a PostCSS plugin so you can write css.json style css with gridlover grid units and parse it, maybe extract the parser from postcss and use it in gridlover, so a user can edit the css
-
+  Computes all values that Gridlover understands to proper css values that browsers understand. (by lookin up from the scale stack)
 */
+
+const SCALEUNIT_REGEX = /\b[0-9]+sx\b/g;
+const GRIDROW_REGEX = /\b[0-9]+gr\b/g;
 
 function ruleComputer (base, scaleStack, inObj, context) {
 
   let outObj = {};
   context = context || 0;
   if ('font-size' in inObj) {
-    let val = inObj['font-size'].match(G.SCALEUNIT_REGEX);
+    let val = inObj['font-size'].match(SCALEUNIT_REGEX);
     if (val) {
       context = Math.round(parseInt(val[0]));
     }
@@ -53,12 +50,12 @@ function valueComputer (base, scaleStack, property, value, scaleIndex) {
       return scaleStack[scaleIndex][key];
     }
   });
-  computedValue = computedValue.replace(G.SCALEUNIT_REGEX, function (len){
+  computedValue = computedValue.replace(SCALEUNIT_REGEX, function (len){
     len = len.replace('sx', '');
     len = Math.round(parseInt(len));
     return scaleStack[len].fontSize;
   });
-  computedValue = computedValue.replace(G.GRIDROW_REGEX, function (len){
+  computedValue = computedValue.replace(GRIDROW_REGEX, function (len){
     len = len.replace('gr', '');
     len = Math.round(parseFloat(len));
     return len * parseFloat(scaleStack[scaleIndex].line) + base.units;
