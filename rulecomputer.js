@@ -9,7 +9,7 @@ module.exports = ruleComputer;
 */
 
 const SCALEUNIT_REGEX = /\b[0-9]+sx\b/g;
-const GRIDROW_REGEX = /\b[0-9]+gr\b/g;
+const GRIDROW_REGEX = /\b\d+\.?\d*gr\b/g;
 
 function ruleComputer (base, scaleStack, inObj, context) {
 
@@ -57,7 +57,7 @@ function valueComputer (base, scaleStack, property, value, scaleIndex) {
   });
   computedValue = computedValue.replace(GRIDROW_REGEX, function (len){
     len = len.replace('gr', '');
-    len = Math.round(parseFloat(len));
+    len = parseFloat(len);
     return len * parseFloat(scaleStack[scaleIndex].line) + base.units;
   });
   if (property === 'line-height' && (value.trim() === 'auto' || parseInt(value, 10) == '0')) {
