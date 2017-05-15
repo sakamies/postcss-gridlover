@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.2.1]
+### Fixed
+- [Grid units on border do not work.](https://github.com/sakamies/postcss-gridlover/issues/10#issuecomment-300274273)
+
 ## [0.1.1] - 2016-08-04
 ### Fixed
 - `npm run test` now works
